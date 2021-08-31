@@ -1807,8 +1807,8 @@
     "eslint-plugin-react" "^7.21.5"
     "eslint-plugin-react-hooks" "^4.0.0"
 
-"@pancakeswap-libs/uikit@goosedefi/goose-uikit":
-  "resolved" "git+ssh://git@github.com/goosedefi/goose-uikit.git#4a665ca7b735e1fc9e22191b98912308a6001bbd"
+"@pancakeswap-libs/uikit@github:sam-thewise/goose-uikit":
+  "resolved" "git+ssh://git@github.com/sam-thewise/goose-uikit.git#4a665ca7b735e1fc9e22191b98912308a6001bbd"
   "version" "0.10.2"
   dependencies:
     "@types/lodash" "^4.14.162"
