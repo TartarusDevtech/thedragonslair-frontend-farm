@@ -100,13 +100,15 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
   const farmImage = farm.isTokenOnly ? farm.tokenSymbol.toLowerCase() : `${farm.tokenSymbol.toLowerCase()}-${farm.quoteTokenSymbol.toLowerCase()}`
 
   const totalValue: BigNumber = useMemo(() => {
+
     if (!farm.lpTotalInQuoteToken) {
+      console.log('null value')
       return null
     }
-    if (farm.quoteTokenSymbol === QuoteToken.BNB) {
+    if (farm.quoteTokenSymbol === QuoteToken.WAVAX) {
       return bnbPrice.times(farm.lpTotalInQuoteToken)
     }
-    if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
+    if (farm.quoteTokenSymbol === QuoteToken.DREGG) {
       return cakePrice.times(farm.lpTotalInQuoteToken)
     }
     return farm.lpTotalInQuoteToken
@@ -117,7 +119,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
     : '-'
 
   const lpLabel = farm.lpSymbol
-  const earnLabel = 'EGG'
+  const earnLabel = 'DREGG'
   const farmAPY = farm.apy && farm.apy.times(new BigNumber(100)).toNumber().toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
@@ -127,7 +129,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
 
   return (
     <FCard>
-      {farm.tokenSymbol === 'EGG' && <StyledCardAccent />}
+      {farm.tokenSymbol === 'DREGG' && <StyledCardAccent />}
       <CardHeading
         lpLabel={lpLabel}
         multiplier={farm.multiplier}
@@ -178,9 +180,9 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
           isTokenOnly={farm.isTokenOnly}
           bscScanAddress={
             farm.isTokenOnly ?
-              `https://bscscan.com/token/${farm.tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
+              `https://cchain.explorer.avax-test.network/tokens/${farm.tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
               :
-              `https://bscscan.com/token/${farm.lpAddresses[process.env.REACT_APP_CHAIN_ID]}`
+              `https://cchain.explorer.avax-test.network/tokens/${farm.lpAddresses[process.env.REACT_APP_CHAIN_ID]}`
           }
           totalValueFormated={totalValueFormated}
           lpLabel={lpLabel}

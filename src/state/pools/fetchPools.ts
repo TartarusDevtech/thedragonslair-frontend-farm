@@ -4,7 +4,7 @@ import cakeABI from 'config/abi/cake.json'
 import wbnbABI from 'config/abi/weth.json'
 import { QuoteToken } from 'config/constants/types'
 import multicall from 'utils/multicall'
-import { getWbnbAddress } from 'utils/addressHelpers'
+import { getWavaxbAddress } from 'utils/addressHelpers'
 import BigNumber from 'bignumber.js'
 
 const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
@@ -39,8 +39,8 @@ export const fetchPoolsBlockLimits = async () => {
 }
 
 export const fetchPoolsTotalStatking = async () => {
-  const nonBnbPools = poolsConfig.filter((p) => p.stakingTokenName !== QuoteToken.BNB)
-  const bnbPool = poolsConfig.filter((p) => p.stakingTokenName === QuoteToken.BNB)
+  const nonBnbPools = poolsConfig.filter((p) => p.stakingTokenName !== QuoteToken.WAVAX)
+  const bnbPool = poolsConfig.filter((p) => p.stakingTokenName === QuoteToken.WAVAX)
 
   const callsNonBnbPools = nonBnbPools.map((poolConfig) => {
     return {
@@ -52,7 +52,7 @@ export const fetchPoolsTotalStatking = async () => {
 
   const callsBnbPools = bnbPool.map((poolConfig) => {
     return {
-      address: getWbnbAddress(),
+      address: getWavaxbAddress(),
       name: 'balanceOf',
       params: [poolConfig.contractAddress[CHAIN_ID]],
     }

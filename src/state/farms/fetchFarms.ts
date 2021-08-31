@@ -11,6 +11,9 @@ const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
 const fetchFarms = async () => {
   const data = await Promise.all(
     farmsConfig.map(async (farmConfig) => {
+
+      
+
       const lpAdress = farmConfig.lpAddresses[CHAIN_ID]
       const calls = [
         // Balance of token in the LP contract
@@ -57,16 +60,30 @@ const fetchFarms = async () => {
         quoteTokenDecimals
       ] = await multicall(erc20, calls)
 
+     
+
       let tokenAmount;
       let lpTotalInQuoteToken;
       let tokenPriceVsQuote;
+
       if(farmConfig.isTokenOnly){
+
+        // console.log(new BigNumber( lpTokenBalanceMC).div( new BigNumber(10).pow( tokenDecimals )))
+        console.log(tokenDecimals)
+
         tokenAmount = new BigNumber(lpTokenBalanceMC).div(new BigNumber(10).pow(tokenDecimals));
-        if(farmConfig.tokenSymbol === QuoteToken.BUSD && farmConfig.quoteTokenSymbol === QuoteToken.BUSD){
+
+        console.log(`${Number(tokenAmount).toLocaleString(undefined, { maximumFractionDigits: 0 })}`)
+
+        if(farmConfig.tokenSymbol === QuoteToken.USDTe && farmConfig.quoteTokenSymbol === QuoteToken.USDTe){
+
           tokenPriceVsQuote = new BigNumber(1);
         }else{
           tokenPriceVsQuote = new BigNumber(quoteTokenBlanceLP).div(new BigNumber(tokenBalanceLP));
         }
+
+
+
         lpTotalInQuoteToken = tokenAmount.times(tokenPriceVsQuote);
       }else{
         // Ratio in % a LP tokens that are in staking, vs the total number in circulation
@@ -103,7 +120,7 @@ const fetchFarms = async () => {
         },
         {
           address: getMasterChefAddress(),
-          name: 'eggPerBlock',
+          name: 'dragonEggPerBlock',
         },
       ])
 

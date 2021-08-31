@@ -20,12 +20,13 @@ export interface Ifo {
 }
 
 export enum QuoteToken {
-  'BNB' = 'BNB',
-  'CAKE' = 'CAKE',
   'SYRUP' = 'SYRUP',
-  'BUSD' = 'BUSD',
   'TWT' = 'TWT',
   'UST' = 'UST',
+  'USDC' = 'USDC',
+  'USDTe' = 'USDT.e',
+  'WAVAX' = 'WAVAX',
+  'DREGG' = 'DREGG'
 }
 
 export enum PoolCategory {
@@ -36,7 +37,7 @@ export enum PoolCategory {
 
 export interface Address {
   97?: string
-  56: string
+  43113: string
 }
 
 export interface FarmConfig {

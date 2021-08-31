@@ -68,34 +68,34 @@ export const usePoolFromPid = (sousId): Pool => {
 
 // Prices
 
-export const usePriceBnbBusd = (): BigNumber => {
-  const pid = 2 // BUSD-BNB LP
+export const usePriceWavaxUsdt = (): BigNumber => {
+  const pid = 2 // USDT-WAVAX LP
   const farm = useFarmFromPid(pid)
   return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO
 }
 
-export const usePriceCakeBusd = (): BigNumber => {
+export const usePriceDreggUsdt = (): BigNumber => {
   // const pid = 1 // CAKE-BNB LP
   // const bnbPriceUSD = usePriceBnbBusd()
   // const farm = useFarmFromPid(pid)
   // return farm.tokenPriceVsQuote ? bnbPriceUSD.times(farm.tokenPriceVsQuote) : ZERO
-  const pid = 0; // EGG-BUSD LP
+  const pid = 1; // DREGG-USDT LP
   const farm = useFarmFromPid(pid);
   return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO;
 }
 
 export const useTotalValue = (): BigNumber => {
   const farms = useFarms();
-  const bnbPrice = usePriceBnbBusd();
-  const cakePrice = usePriceCakeBusd();
+  const bnbPrice = usePriceWavaxUsdt();
+  const cakePrice = usePriceDreggUsdt();
   let value = new BigNumber(0);
   for (let i = 0; i < farms.length; i++) {
     const farm = farms[i]
     if (farm.lpTotalInQuoteToken) {
       let val;
-      if (farm.quoteTokenSymbol === QuoteToken.BNB) {
+      if (farm.quoteTokenSymbol === QuoteToken.WAVAX) {
         val = (bnbPrice.times(farm.lpTotalInQuoteToken));
-      }else if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
+      }else if (farm.quoteTokenSymbol === QuoteToken.DREGG) {
         val = (cakePrice.times(farm.lpTotalInQuoteToken));
       }else{
         val = (farm.lpTotalInQuoteToken);

@@ -1,30 +1,30 @@
 export default {
-  cake: {
-    56: '0xF952Fc3ca7325Cc27D15885d37117676d25BfdA6',
+  dragonegg: {
+    43113: '0x250F45b88Fc8B2fDC207Fc4fa7921811e3a5a6c6',
     97: '',
   },
   masterChef: {
-    56: '0xe70E9185F5ea7Ba3C5d63705784D8563017f2E57',
+    43113: '0x6dC8722cA0D8C7717CFD1267bA44687448c8c912',
     97: '',
   },
-  wbnb: {
-    56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+  wavax: {
+    43113: '0xd00ae08403b9bbb9124bb305c09058e32c39a48c',
     97: '',
   },
   lottery: {
-    56: '',
+    43113: '',
     97: '',
   },
   lotteryNFT: {
-    56: '',
+    43113: '',
     97: '',
   },
   mulltiCall: {
-    56: '0x1ee38d535d541c55c9dae27b12edf090c608e6fb',
+    43113: '0xDE8c6c8266171F54711c40E512Ec2B6D1FEA6Aba',
     97: '0x67ADCB4dF3931b0C5Da724058ADC2174a9844412',
   },
-  busd: {
-    56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+  usdte: {
+    43113: '0xFe143522938e253e5Feef14DB0732e9d96221D72',
     97: '',
   },
 }
