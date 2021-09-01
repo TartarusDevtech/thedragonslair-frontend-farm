@@ -59,11 +59,12 @@ const FCard = styled.div`
   background: ${(props) => props.theme.card.background};
   border-radius: 32px;
   box-shadow: 0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05);
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   padding: 24px;
+  position: relative;
   text-align: center;
-  width: 100%;
-  margin-bottom: 24px;
 `
 
 const Divider = styled.div`
