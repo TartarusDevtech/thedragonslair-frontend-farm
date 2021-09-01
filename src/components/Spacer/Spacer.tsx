@@ -33,4 +33,8 @@ const StyledSpacer = styled.div<StyledSpacerProps>`
   width: ${(props) => props.size}px;
 `
 
+Spacer.defaultProps = {
+  size : 'md',
+}
+
 export default Spacer

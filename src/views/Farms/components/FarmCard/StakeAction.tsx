@@ -60,4 +60,12 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({ stakedBalance, tokenBalan
   )
 }
 
+StakeAction.defaultProps = {
+  stakedBalance : new BigNumber(0),
+  tokenBalance: new BigNumber(0),
+  tokenName : null,
+  pid: 0,
+  depositFeeBP : 0,
+}
+
 export default StakeAction

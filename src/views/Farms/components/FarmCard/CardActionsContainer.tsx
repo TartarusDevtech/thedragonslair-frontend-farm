@@ -89,4 +89,9 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
   )
 }
 
+CardActions.defaultProps = {
+  ethereum: null,
+  account: null,
+}
+
 export default CardActions

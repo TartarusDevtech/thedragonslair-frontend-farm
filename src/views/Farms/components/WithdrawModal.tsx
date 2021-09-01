@@ -61,4 +61,10 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
   )
 }
 
+WithdrawModal.defaultProps = {
+  onDismiss: null,
+  tokenName : null,
+}
+
+
 export default WithdrawModal

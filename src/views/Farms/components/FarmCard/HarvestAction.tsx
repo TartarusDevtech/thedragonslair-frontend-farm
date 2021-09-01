@@ -62,4 +62,9 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   )
 }
 
+HarvestAction.defaultProps = {
+  earnings : new BigNumber(0),
+  pid: 0,
+}
+
 export default HarvestAction

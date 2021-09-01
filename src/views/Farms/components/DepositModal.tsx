@@ -63,4 +63,9 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
   )
 }
 
+DepositModal.defaultProps = {
+  onDismiss: null,
+  tokenName: null,
+  depositFeeBP : 0,
+}
 export default DepositModal
