@@ -77,7 +77,6 @@ const StickyIcons = styled.a`
   display: block;
   text-align: center;
   padding: 1px;
-  transition: all 0.3s ease;
   color: white;
   font-size: 20px;
   max-width: 10%;
@@ -167,6 +166,9 @@ const Home: React.FC = ( ) => {
           </StickyIcons>
           <StickyIcons href="" target="_blank">
               <img alt="charts" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/chart_candlestick.png"/>
+          </StickyIcons>
+          <StickyIcons href="https://docs.thedragonslair.farm/" target="_blank">
+              <img alt="docs" src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/512/Doc_-_Google_Docs.png"/>
           </StickyIcons>
     </StickySideBar>
     <Page>
