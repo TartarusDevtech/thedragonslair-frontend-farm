@@ -134,4 +134,13 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
   )
 }
 
+ApyCalculatorModal.defaultProps = {
+  onDismiss: null,
+  lpLabel: '',
+  cakePrice: new BigNumber(0),
+  apy: new BigNumber(0),
+  quoteTokenAdresses: null,
+  quoteTokenSymbol: ''
+}
+
 export default ApyCalculatorModal
