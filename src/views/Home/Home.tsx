@@ -23,6 +23,7 @@ import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import FarmTabButtons from './components/FarmTabButtons'
 import Divider from './components/Divider'
 
+
 const Hero = styled.div`
   align-items: center;
   background-image: url('/images/egg/3.png');
@@ -66,6 +67,31 @@ const Cards = styled(BaseLayout)`
     }
   }
 `
+const StickySideBar = styled.div`
+  position: sticky;
+  float: left;
+  top: 40%;
+`
+
+const StickyIcons = styled.a`
+  display: block;
+  text-align: center;
+  padding: 1px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+  max-width: 10%;
+  height: auto;
+`
+const StyledImg = styled.img`
+  width: 120px;
+  min-height: 120px;
+  max-height: auto;
+  float: left;
+  margin: 1px;
+  padding: 1px;
+`
+
 
 const Home: React.FC = ( ) => {
   const { path } = useRouteMatch()
@@ -136,13 +162,28 @@ const Home: React.FC = ( ) => {
   )
 
   return (
+    <div>
+    <StickySideBar>
+        <StickyIcons href="https://twitter.com/DRGNCRYPTOGAMIN" target="_blank">
+              <img alt="twitter" src="https://seeklogo.com/images/T/twitter-icon-square-logo-108D17D373-seeklogo.com.png"/>
+          </StickyIcons>
+          <StickyIcons href="https://t.me/thedragonslairfarm" target="_blank">
+              <img alt="telegram" src="https://image.flaticon.com/icons/png/512/124/124019.png"/>
+          </StickyIcons>
+          <StickyIcons href="" target="_blank">
+              <img alt="exchange" src="https://assets.coingecko.com/markets/images/627/large/pangolin.jpg?1613741041"/>
+          </StickyIcons>
+          <StickyIcons href="" target="_blank">
+              <img alt="charts" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/chart_candlestick.png"/>
+          </StickyIcons>
+    </StickySideBar>
     <Page>
       <Hero>
         <Heading as="h1" size="xl" mb="24px" color="secondary">
           The Dragon&apos;s Lair
         </Heading>
       </Hero>
-      
+    
       <div>
         <FarmStakingCard />
         <div>
@@ -165,6 +206,7 @@ const Home: React.FC = ( ) => {
         </Cards>
       </div>
     </Page>
+    </div>
   )
 }
 
