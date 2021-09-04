@@ -83,14 +83,6 @@ const StickyIcons = styled.a`
   max-width: 10%;
   height: auto;
 `
-const StyledImg = styled.img`
-  width: 120px;
-  min-height: 120px;
-  max-height: auto;
-  float: left;
-  margin: 1px;
-  padding: 1px;
-`
 
 
 const Home: React.FC = ( ) => {
