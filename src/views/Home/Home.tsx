@@ -162,10 +162,10 @@ const Home: React.FC = ( ) => {
               <img alt="telegram" src="https://image.flaticon.com/icons/png/512/124/124019.png"/>
           </StickyIcons>
           <StickyIcons href="" target="_blank">
-              <img alt="exchange" src="https://assets.coingecko.com/markets/images/627/large/pangolin.jpg?1613741041"/>
+              <img alt="charts" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/chart_candlestick.png"/>
           </StickyIcons>
           <StickyIcons href="" target="_blank">
-              <img alt="charts" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/chart_candlestick.png"/>
+              <img alt="exchange" src="https://assets.coingecko.com/markets/images/627/large/pangolin.jpg?1613741041"/>
           </StickyIcons>
           <StickyIcons href="https://docs.thedragonslair.farm/" target="_blank">
               <img alt="docs" src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/512/Doc_-_Google_Docs.png"/>
