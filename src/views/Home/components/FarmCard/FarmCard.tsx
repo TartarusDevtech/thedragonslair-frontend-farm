@@ -195,4 +195,11 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
   )
 }
 
+FarmCard.defaultProps = {
+  cakePrice : new BigNumber(0),
+  bnbPrice: new BigNumber(0),
+  ethereum: null,
+  account: null,
+}
+
 export default FarmCard
